@@ -70,6 +70,7 @@
     .btn-primary{
       background:linear-gradient(135deg,var(--brand),var(--brand-2));
       box-shadow:0 10px 30px rgba(78,168,255,.28);
+      color:#fff;
     }
     .btn-primary:hover{transform:translateY(-1px); box-shadow:0 16px 40px rgba(124,58,237,.35)}
     .btn-ghost{border-color:#2a3355; color:#c6d1ee; background:rgba(255,255,255,.02)}
@@ -107,7 +108,85 @@
     .fade-in{opacity:0; transform:translateY(10px); animation:fade .6s ease forwards}
     .fade-in.d2{animation-delay:.1s} .d3{animation-delay:.2s} .d4{animation-delay:.3s}
     @keyframes fade{to{opacity:1; transform:none}}
+
+
+    .ml-embedded .ml-form-embedWrapper,
+    .ml-embedded .ml-form-embedContainer,
+    .ml-embedded .ml-form-embedBody,
+    .ml-embedded .ml-block-form,
+    .ml-embedded .ml-form-formContent,
+    .ml-embedded .ml-form-embedContent,
+    .ml-embedded .ml-form-embedSubscribe {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .ml-embedded .ml-form-embedContainer,
+    .ml-embedded form {
+      max-width: none !important;
+      width: auto !important;
+    }
+    .ml-embedded form {
+      display: flex !important;
+      gap: .6rem !important;
+      flex-wrap: wrap !important;
+      align-items: center;
+    }
+
+    .ml-embedded input[type="text"],
+    .ml-embedded input[type="email"],
+    .ml-embedded input[type="tel"],
+    .ml-embedded input[type="search"]{
+      background:#0e1530 !important;
+      border:1px solid #263154 !important;
+      color:#eaf0ff !important;
+      padding:.9rem 1rem !important;
+      border-radius:12px !important;
+      width:min(300px, 100%) !important;
+      font-family: inherit !important;
+      box-shadow:none !important;
+    }
+    .ml-embedded ::placeholder{ color:#9fb0d7 !important; }
+
+    .ml-embedded button[type="submit"]{
+      display:inline-flex !important;
+      align-items:center !important;
+      gap:.5rem !important;
+      padding:.9rem 1.15rem !important;
+      border-radius:14px !important;
+      font-weight:700 !important;
+      border:1px solid transparent !important;
+      cursor:pointer !important;
+      transition:transform .08s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease !important;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2)) !important;
+      box-shadow:0 10px 30px rgba(78,168,255,.28) !important;
+      color:#fff !important;
+    }
+    .ml-embedded button[type="submit"]:hover{
+      transform:translateY(-1px) !important;
+      box-shadow:0 16px 40px rgba(124,58,237,.35) !important;
+    }
+
+    .ml-embedded label{ color:#cbd4ee !important; font-size:.95rem !important; }
+    .ml-embedded .ml-form-successBody,
+    .ml-embedded .ml-form-successBody p{ color:#9fb0d7 !important; }
+
+
   </style>
+
+  <!-- MailerLite Universal (add before closing head) -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
+    l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n)
+    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '1851443'); 
+  </script>
+  <!-- End MailerLite Universal -->
+
 </head>
 <body>
 
@@ -177,11 +256,10 @@
             Founding Members receive early access, lifetime perks, a private update channel,
             and a real voice in the product’s evolution.
           </p>
-          <form method="post" action="https://formspree.io/f/mjkaoaae">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Email address" required>
-            <button class="btn btn-primary" type="submit">Join the List</button>
-          </form>
+
+          <div class="ml-embedded" data-form="JOzrwN"></div>
+
+
           <p style="color:#9fb0d7; font-size:.9rem; margin-top:.6rem;">
             No spam. You can opt out anytime. We’ll only email you about Magic Glove updates.
           </p>
@@ -231,7 +309,3 @@
   </script>
 </body>
 </html>
-
-
-
-
